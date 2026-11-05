@@ -1,0 +1,7 @@
+# 依赖与杂项
+node_modules/
+*.log
+.DS_Store
+
+# 验收产物（脚本可重新生成）
+verification/shots/

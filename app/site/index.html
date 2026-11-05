@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>微醺星球 · 十二杯经典调酒指南</title>
+<meta content="微醺星球——跟着动画学会 12 款 IBA 经典鸡尾酒：材料用量、步骤自动连播、摇和/搅拌/直调一次讲清。" name="description">
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='14' fill='%23e8a54b'/%3E%3Cellipse cx='32' cy='32' rx='26' ry='9' fill='none' stroke='%23f0c584' stroke-width='3' transform='rotate(-18 32 32)'/%3E%3C/svg%3E" rel="icon">
+<link href="css/style.css" rel="stylesheet">
+<script>
+/* 首帧前应用主题，避免闪烁；默认明亮模式 */
+(function () {
+  try {
+    var t = localStorage.getItem('tipsy-theme');
+    document.documentElement.dataset.theme = (t === 'dark') ? 'dark' : 'light';
+  } catch (e) { document.documentElement.dataset.theme = 'light'; }
+})();
+</script>
+</head>
+<body id="top">
+
+<nav class="nav">
+  <a class="brand" href="#top">
+    <svg aria-hidden="true" class="brand-planet" viewBox="0 0 36 36">
+      <defs>
+        <radialGradient cx="35%" cy="30%" id="bpg" r="80%">
+          <stop offset="0%" stop-color="#3a6b7a"/>
+          <stop offset="100%" stop-color="#123041"/>
+        </radialGradient>
+      </defs>
+      <circle cx="18" cy="18" fill="url(#bpg)" r="9"/>
+      <ellipse cx="18" cy="18" fill="none" opacity=".85" rx="16" ry="5" stroke="#f0c584" stroke-width="1.6" transform="rotate(-16 18 18)"/>
+      <circle cx="13" cy="16" fill="#f0c584" r="1"/>
+      <circle cx="22" cy="20" fill="#f0c584" r=".8"/>
+    </svg>
+    <span class="brand-name">微醺星球</span>
+  </a>
+  <div class="nav-links">
+    <a href="#methods">三种做法</a>
+    <a href="#menu">酒单</a>
+    <button aria-label="切换到暗黑模式" class="theme-toggle" id="theme-toggle">
+      <svg aria-hidden="true" class="ic-moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg aria-hidden="true" class="ic-sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="home">
+
+  <header class="hero">
+    <div aria-hidden="true" class="stars"></div>
+
+    <div aria-hidden="true" class="planet-wrap">
+      <svg class="planet-svg" viewBox="-400 -400 800 800">
+        <defs>
+          <radialGradient cx="35%" cy="30%" id="pg-main" r="80%">
+            <stop offset="0%" stop-color="#2c5866"/>
+            <stop offset="55%" stop-color="#17303d"/>
+            <stop offset="100%" stop-color="#0c1a24"/>
+          </radialGradient>
+          <linearGradient id="ring-g" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0%" stop-color="#e8a54b" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#f0c584" stop-opacity=".9"/>
+            <stop offset="100%" stop-color="#e8a54b" stop-opacity="0"/>
+          </linearGradient>
+          <filter height="260%" id="glow-f" width="260%" x="-80%" y="-80%">
+            <feGaussianBlur result="b" stdDeviation="6"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <g class="planet-float">
+          <circle fill="none" opacity=".16" r="252" stroke="#e8a54b" stroke-width="1.6"/>
+          <g transform="rotate(-16)">
+            <ellipse fill="none" opacity=".8" rx="318" ry="74" stroke="url(#ring-g)" stroke-width="20"/>
+            <ellipse fill="none" opacity=".32" rx="348" ry="84" stroke="url(#ring-g)" stroke-width="4"/>
+          </g>
+
+          <circle fill="url(#pg-main)" r="190"/>
+          <g class="continents" opacity=".5">
+            <path d="M-120,-90 C-60,-140 30,-130 70,-90 C110,-50 60,-10 10,-20 C-50,-30 -150,-40 -120,-90 Z" fill="#1f4a52"/>
+            <path d="M40,60 C110,30 180,70 170,130 C160,180 80,170 40,140 C0,110 0,80 40,60 Z" fill="#1f4a52"/>
+            <ellipse cx="-90" cy="90" fill="#1f4a52" rx="50" ry="34"/>
+            <ellipse cx="130" cy="-120" fill="#1f4a52" opacity=".8" rx="34" ry="20"/>
+          </g>
+          <g class="city-lights" fill="#f0c584" filter="url(#glow-f)">
+            <circle cx="60" cy="-70" r="2.5"/>
+            <circle cx="-40" cy="-100" r="2"/>
+            <circle class="tw t1" cx="-120" cy="-20" r="3"/>
+            <circle cx="20" cy="40" r="2"/>
+            <circle class="tw t2" cx="100" cy="30" r="2.5"/>
+            <circle cx="-80" cy="80" r="2"/>
+            <circle cx="140" cy="-40" r="1.8"/>
+            <circle class="tw t3" cx="-20" cy="-40" r="2.2"/>
+            <circle cx="40" cy="100" r="2.6"/>
+            <circle cx="-140" cy="60" r="1.6"/>
+            <circle class="tw t4" cx="80" cy="-10" r="2"/>
+            <circle cx="-60" cy="20" r="1.8"/>
+            <circle cx="0" cy="-120" r="2"/>
+            <circle class="tw t5" cx="120" cy="90" r="2"/>
+            <circle cx="-100" cy="130" r="1.5"/>
+            <circle class="tw t6" cx="30" cy="-80" r="1.6"/>
+            <circle cx="-150" cy="-80" r="1.7"/>
+            <circle class="tw t2" cx="150" cy="70" r="1.9"/>
+          </g>
+          <circle fill="none" opacity=".22" r="190" stroke="#7fd0d8" stroke-width="1.5"/>
+
+          <g transform="rotate(-16)">
+            <path d="M -318 0 A 318 74 0 0 0 318 0" fill="none" opacity=".95" stroke="url(#ring-g)" stroke-width="20"/>
+            <path d="M -348 0 A 348 84 0 0 0 348 0" fill="none" opacity=".5" stroke="url(#ring-g)" stroke-width="4"/>
+          </g>
+        </g>
+
+        <g class="orbit">
+          <g transform="rotate(15) translate(0,-318)">
+            <g class="sat">
+              <g fill="rgba(240,197,132,.14)" stroke="#f0c584" stroke-linecap="round" stroke-width="2">
+                <path d="M -13 -2 A 13 11 0 0 0 13 -2"/>
+                <line x1="0" x2="0" y1="9" y2="20"/>
+                <line x1="-7" x2="7" y1="21" y2="21"/>
+              </g>
+            </g>
+          </g>
+          <g transform="rotate(135) translate(0,-318)">
+            <g class="sat">
+              <g fill="rgba(207,214,228,.12)" stroke="#cfd6e4" stroke-width="2">
+                <rect height="20" rx="2" width="12" x="-6" y="0"/>
+                <path d="M -6 0 L -3 -8 L 3 -8 L 6 0 Z"/>
+                <rect height="6" width="6" x="-3" y="-14"/>
+              </g>
+            </g>
+          </g>
+          <g transform="rotate(255) translate(0,-318)">
+            <g class="sat">
+              <g>
+                <circle fill="#d97b29" r="11" stroke="#f0c584" stroke-width="1.6"/>
+                <path d="M 0 -10 L 0 10 M -10 0 L 10 0 M -7 -7 L 7 7 M -7 7 L 7 -7" stroke="#f7d9a8" stroke-width="1.1"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero-copy">
+      <p class="hero-kicker">TIPSY PLANET · 调酒教学</p>
+      <h1 aria-label="微醺星球" class="hero-title"><span>微</span><span>醺</span><span>星</span><span>球</span></h1>
+      <p class="hero-sub">十二杯 IBA 经典鸡尾酒，从量酒到摇壶，<br>每一步都看得见的调酒课。</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#menu">进入酒单</a>
+        <a class="btn btn-ghost" href="#methods">先学三种做法</a>
+      </div>
+    </div>
+
+    <div aria-hidden="true" class="scroll-cue"><span></span></div>
+  </header>
+
+  <section class="section" id="methods">
+    <div class="container">
+      <p class="section-kicker">METHODS</p>
+      <h2 class="section-title">所有鸡尾酒，只有三种做法</h2>
+      <p class="section-desc">看懂「摇和 · 搅拌 · 直调」，你就能调出九成的经典配方。</p>
+      <div class="methods-grid" id="methods-grid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="menu">
+    <div class="container">
+      <p class="section-kicker">MENU</p>
+      <h2 class="section-title">十二杯经典</h2>
+      <p class="section-desc">配方与用量参考国际调酒师协会（IBA），点击任意一杯开始学习。</p>
+      <div class="cocktail-grid" id="cocktail-grid"></div>
+    </div>
+  </section>
+</main>
+
+<section hidden id="detail">
+  <div class="container detail-inner">
+    <div class="detail-topbar">
+      <a class="back-btn" href="#top" id="back-btn">
+        <svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="16"><path d="M15 18l-6-6 6-6"/></svg>
+        返回酒单
+      </a>
+      <span class="detail-method-badge" id="d-method"></span>
+    </div>
+
+    <header class="detail-head">
+      <div class="detail-head-main">
+        <!-- tabindex="-1"：路由切进详情时把焦点挪到标题上（整页此刻的 h1），读屏会念酒名 -->
+        <h1 id="d-name" tabindex="-1"></h1>
+        <p class="d-en" id="d-en"></p>
+      </div>
+      <p class="d-tagline" id="d-tagline"></p>
+    </header>
+
+    <div class="detail-grid">
+      <aside class="panel">
+        <h3 class="panel-title">准备这些</h3>
+        <ul class="ing-list" id="d-ingredients"></ul>
+        <div class="muddle-list" hidden id="d-muddle">
+          <h4>先放入杯中捣压</h4>
+          <ul id="d-muddle-items"></ul>
+        </div>
+        <div class="prep-meta" id="d-meta"></div>
+      </aside>
+
+      <div class="panel studio-panel">
+        <div aria-label="调酒步骤动画，空格键播放或暂停，方向键快进快退" class="stage-wrap" id="stage-host" role="group" tabindex="0"></div>
+        <div aria-live="polite" class="sr-only" id="stage-live" role="status"></div>
+        <div class="controls">
+          <button aria-label="播放" class="ctl-btn" id="btn-play">
+            <svg aria-hidden="true" class="ic-play" fill="currentColor" height="18" viewBox="0 0 24 24" width="18"><path d="M8 5.5v13l11-6.5z"/></svg>
+            <svg aria-hidden="true" class="ic-pause" fill="currentColor" height="18" viewBox="0 0 24 24" width="18"><path d="M7 5h3.4v14H7zM13.6 5H17v14h-3.4z"/></svg>
+          </button>
+          <button aria-label="重新开始" class="ctl-btn" id="btn-restart">
+            <svg aria-hidden="true" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="17"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+          </button>
+          <button aria-label="关闭音效" class="ctl-btn" id="btn-sound">
+            <svg aria-hidden="true" class="ic-on" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="17"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+            <svg aria-hidden="true" class="ic-off" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24" width="17"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="22" x2="16" y1="9" y2="15"/><line x1="16" x2="22" y1="9" y2="15"/></svg>
+          </button>
+          <div aria-label="动画进度" aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="timeline" id="timeline" role="slider" tabindex="0">
+            <div class="timeline-steps" id="timeline-steps"></div>
+            <div class="timeline-fill" id="timeline-fill"></div>
+            <div class="timeline-handle" id="timeline-handle"></div>
+          </div>
+          <span class="time-label" id="time-label">0:00</span>
+        </div>
+        <div class="chips" id="step-chips"></div>
+      </div>
+    </div>
+
+    <div class="panel note-panel">
+      <h3 class="panel-title">调酒师笔记</h3>
+      <p id="d-story"></p>
+      <p class="d-method-desc" id="d-method-desc"></p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="footer-name">微醺星球 TIPSY PLANET</span>
+      <span class="footer-sub">十二杯经典 · 一颗微醺的心</span>
+    </div>
+    <p class="footer-note">配方参考国际调酒师协会（IBA）· 卡片图片由 AI 生成 · 请理性饮酒 · 未满十八岁请勿饮酒</p>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
