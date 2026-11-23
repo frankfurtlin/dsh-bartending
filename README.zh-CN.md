@@ -4,11 +4,8 @@
 
 **把 12 款 IBA 经典鸡尾酒的调酒教学站「微醺星球」装进 DSH：从侧栏「更多 → 调酒」打开，配方、做法与分步动画都在面板里。**
 
-A DSH plugin that serves the Tipsy Planet cocktail guide inside the main panel, with a single entry in the sidebar's More menu.
-
 [![Version](https://img.shields.io/badge/version-0.1.0-blue)](package.json)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Platform](https://img.shields.io/badge/DSH-DeepSeek%20Harness-5b5ef7)](https://github.com/frankfurtlin/dsh-pocket)
 
 [English](README.md) · **简体中文**
 
