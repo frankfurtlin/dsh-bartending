@@ -13,11 +13,24 @@
  */
 import { createRequire } from 'node:module'
 import { mkdir } from 'node:fs/promises'
+import { homedir } from 'node:os'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 
-const require = createRequire('/root/workspace/hermes-site/tools/node_modules/')
-const { chromium } = require('playwright')
+/**
+ * playwright 解析顺序：当前模块自带解析 → 环境变量 PLAYWRIGHT_MODULE_DIR
+ * → 同机其它项目的默认安装位置（按运行时家目录推导，不写死绝对路径）。
+ */
+function loadPlaywright() {
+  try {
+    return createRequire(import.meta.url)('playwright')
+  } catch {
+    const dir = process.env.PLAYWRIGHT_MODULE_DIR || join(homedir(), 'workspace/hermes-site/tools/node_modules')
+    return createRequire(join(dir, 'noop.js'))('playwright')
+  }
+}
+
+const { chromium } = loadPlaywright()
 
 const args = process.argv.slice(2)
 function arg(name, fallback = undefined) {
