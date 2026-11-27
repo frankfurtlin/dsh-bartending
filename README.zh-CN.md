@@ -32,10 +32,12 @@
 
 ## 安装
 
+下面的命令假设仓库检出在 `/opt/dsh/dsh-bartending`，放在别处就替换成实际路径。
+
 ```bash
 # 推荐：插件 → 添加插件 → 填本仓库绝对路径 → 安装 → 打开开关 → 刷新页面（热挂载，无需重启）
 # 等价的手工方式：
-dsh plugin --profile web add /root/workspace/plugins/dsh-bartending
+dsh plugin --profile web add /opt/dsh/dsh-bartending
 # 再把 "dsh-bartending" 加进 profile package.json 的 dsh.profile.bundles
 systemctl restart deepseek-harness.service
 ```
@@ -44,7 +46,7 @@ systemctl restart deepseek-harness.service
 
 后面几节是完整说明：功能细节、配置项、设计取舍、验收记录。
 
-bestlife 的调酒静态站（原 `/root/workspace/betterlife/app/domains/bartending/`）拆成
+bestlife 的调酒静态站（原 `~/workspace/betterlife/app/domains/bartending/`）拆成
 独立 DSH 插件：**只在侧栏「更多」菜单出现一行「调酒」**，点开后在主面板内嵌同源
 iframe 打开应用；不进侧栏常驻行。
 
@@ -67,7 +69,7 @@ verification/verify.mjs Playwright 端到端验收（DSH 内）
 
 ```bash
 # 安装（写 profile 的 link: 依赖 + bundles）
-plugin_manager action=install_bundle target=/root/workspace/plugins/dsh-bartending
+plugin_manager action=install_bundle target=/opt/dsh/dsh-bartending
 # 卸载
 plugin_manager action=remove_bundle target=dsh-bartending
 ```
@@ -77,7 +79,7 @@ plugin_manager action=remove_bundle target=dsh-bartending
 ### 验收
 
 ```bash
-cd /root/workspace/plugins/dsh-bartending/verification
+cd /opt/dsh/dsh-bartending/verification
 TOKEN=$(journalctl -u deepseek-harness --no-pager --since today | grep -o 'token=[A-Za-z0-9_-]*' | tail -1)
 node verify.mjs --url "http://127.0.0.1:3080/?$TOKEN"
 ```
@@ -98,8 +100,8 @@ node verify.mjs --url "http://127.0.0.1:3080/?$TOKEN"
 `app/site/` 是 betterlife 调酒站的副本；betterlife 侧继续改动后重同步：
 
 ```bash
-rsync -a --delete /root/workspace/betterlife/app/domains/bartending/ \
-  /root/workspace/plugins/dsh-bartending/app/site/
+rsync -a --delete ~/workspace/betterlife/app/domains/bartending/ \
+  /opt/dsh/dsh-bartending/app/site/
 ```
 
 （后续 betterlife 瘦身时，把 `app/domains/bartending/` 作为唯一来源删除即可。）

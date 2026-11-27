@@ -26,11 +26,13 @@ A card opens at `/bartending/#/cocktail/<id>`: story, ingredients, technique, ga
 
 ## Install
 
+The commands below assume the checkout is at `/opt/dsh/dsh-bartending` — substitute your own path if it lives elsewhere.
+
 ```bash
 # Preferred: Plugins → Add plugin, paste this repository's path, install,
 # switch it on and reload the page. That mounts it live, with no restart.
 # Manual equivalent:
-dsh plugin --profile web add /root/workspace/plugins/dsh-bartending
+dsh plugin --profile web add /opt/dsh/dsh-bartending
 # then add "dsh-bartending" to dsh.profile.bundles in the Web profile's package.json
 systemctl restart deepseek-harness.service
 ```
